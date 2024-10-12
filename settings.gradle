@@ -8,7 +8,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = "c2me" // avoid weirdness when building the project using another directory name
+// Use gradle.properties for project properties
+rootProject.name = properties['name']
 
 includeBuild('FlowSched') {
     dependencySubstitution {

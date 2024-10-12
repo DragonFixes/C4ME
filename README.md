@@ -1,45 +1,54 @@
-<img width="200" src="https://github.com/coco875/C2ME-fabric/raw/ver/1.17/src/main/resources/assets/c2me/icon.png" alt="C2ME icon" align="right">
+<img width="200" src="https://github.com/DragonFixes/C4ME/raw/ver/1.17/src/main/resources/assets/c2me/icon.png" alt="C2ME icon" align="right">
 <div align="left">
-<h1>C^2M-Engine</h1>
+<h1>C4ME</h1>
 
-[![Github-CI](https://github.com/coco875/C2ME-fabric/workflows/C2ME%20Build%20Script/badge.svg)](https://github.com/coco875/C2ME-fabric/actions?query=workflow%3ACI)
-[![Build Status](https://ci.codemc.io/job/RelativityMC/job/C2ME-fabric/job/ver%252F1.18/badge/icon)](https://ci.codemc.io/job/RelativityMC/job/C2ME-fabric/job/ver%252F1.18/)
-[![Discord](https://img.shields.io/discord/756715786747248641?logo=discord&logoColor=white)](https://discord.io/ishlandbukkit)
-<h3>A Fabric mod designed to improve the chunk performance of Minecraft.</h3>
+[![Discord](https://img.shields.io/discord/756715786747248641?logo=discord&logoColor=white)](https://dsc.gg/streamline)
+[![GitHub release](https://img.shields.io/github/v/release/DragonFixes/C4ME?include_prereleases)](https://github.com/DragonFixes/C4ME/releases)
+[![GitHub all releases](https://img.shields.io/github/downloads/DragonFixes/C4ME/total)](https://github.om/DragonFixes/C4ME/releases)
+[![GitHub issues](https://img.shields.io/github/issues/DragonFixes/C4ME)](https://github.com/DragonFixes/C4ME/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/DragonFixes/C4ME)](https://github.com/DragonFixes/C4ME/pulls)
+[![GitHub license](https://img.shields.io/github/license/DragonFixes/C4ME)](https://github.com/DragonFixes/C4ME/blob/ver/1.17/LICENSE)
+<h3>A Forge mod designed to improve the chunk performance of Minecraft. Fork of C2ME.</h3>
 </div>
 
-## So what is C2ME?
-C^2M-Engine, or C2ME for short, is a Fabric mod designed to improve the performance of chunk generation, I/O, and loading. This is done by taking advantage of multiple CPU cores in parallel. For the best performance it is recommended to use C2ME with [Lithium](https://github.com/CaffeineMC/lithium-fabric) and [Starlight](https://github.com/Spottedleaf/Starlight).
+> [!WARNING]
+> 
+> ### Warning
+> 
+> ***Notice:*** *C4ME is currently under heavy development. Things might break, so back up your worlds!*
 
-## What does C2ME stand for?
-Concurrent chunk management engine, it's about making the game better threaded and more scalable in regard to world gen and chunk io performance.
+> [!IMPORTANT]
+> 
+> ### Requirements
+> - Forge.
+>  - C4ME is a Forge mod, so you need to have Forge installed to use it.
+> - Java 17+.
+> - Forgified Fabric API.
+> - Synatra Connector.
 
-## So what is C2ME not?
-**C2ME is currently in alpha stage and pretty experimental.**  
+## So what is C4ME?
+C^4M-Engine, or C4ME for short, is a Forge mod designed to improve the performance of chunk generation, I/O, and loading. This is done by taking advantage of multiple CPU cores in parallel. For the best performance it is recommended to use C4ME with Radium (fork of Lithium) and [Starlight](https://github.com/Spottedleaf/Starlight).
+
+## What does C4ME stand for?
+Corrected Connectored Concurrent Chunk Management Engine - it's about making the game better threaded and more scalable in regard to world gen and chunk I/O performance.
+
+## So what is C4ME not?
+**C4ME is currently in alpha stage and pretty experimental.**  
 Although it is usable in most cases and tested during build time, it doesn't mean that it is fully stable for a production server.  
 So backup your worlds and practice good game modding skills.
 
 ## Branch development status
-| Branch            | Status                               |
-|-------------------|--------------------------------------|
-| fabric/ver/1.20.1 | Active, Mainline                     |
-| fabric/ver/1.19.4 | Bugfixes only                        |
-| fabric/ver/1.18   | Bugfixes only                        |
+| Branch            | Active? | Prioritized? |
+|-------------------|---------|--------------|
+| `ver/1.20.1`      | [x]     | [x]          |
 
 
 ## Downloads
-You can find semi-stable releases here: https://github.com/coco875/C2ME-fabric/releases  
-
-### Development builds
-**Note: Development builds may modify the config files in a way unreadable by previous versions. You may encounter crashes or config reset when rolling back to previous versions. Please always backup your config.**
-
-You can find development builds here: https://ci.codemc.io/job/RelativityMC/job/C2ME-fabric  
-Note that these builds may contain more bugfixes and performance improvements but are less tested.  
-If you have encountered any problems in release builds, give development builds a try before reporting.
+You can find semi-stable releases here: https://github.com/DragonFixes/C4ME/releases
 
 ## Support
-Our issue tracker: [link](https://github.com/coco875/C2ME-fabric/issues)  
-Our discord server: [link](https://discord.io/ishlandbukkit)
+Issue Tracker: [link](https://github.com/DragonFixes/C4ME/issues)  
+Discord Server: [link](https://dsc.gg/streamline)
 
 ## Building and setting up
 JDK 17+ is required to build and use C2ME  
@@ -50,6 +59,7 @@ git submodule update --init --recursive
 ./gradlew clean build
 ```
 
+Output will be in `build/libs/`.
+
 ## License
 License information can be found [here](/LICENSE).
-
