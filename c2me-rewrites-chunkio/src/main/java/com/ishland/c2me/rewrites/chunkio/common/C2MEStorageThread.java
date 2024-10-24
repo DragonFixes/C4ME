@@ -308,31 +308,37 @@ public class C2MEStorageThread extends Thread {
     private void scheduleChunkRead(long pos, CompletableFuture<NbtCompound> future, NbtScanner scanner) {
         try {
             final ChunkPos pos1 = new ChunkPos(pos);
-            final RegionFile regionFile = ((IRegionBasedStorage) this.storage).invokeGetRegionFile(pos1);
-            final DataInputStream chunkInputStream = regionFile.getChunkInputStream(pos1);
-            if (chunkInputStream == null) {
-                future.complete(null);
-                return;
-            }
-            CompletableFuture.supplyAsync(() -> {
-                try {
-                    try (DataInputStream inputStream = chunkInputStream) {
-                        if (scanner != null) {
-                            NbtIo.scan(inputStream, scanner);
-                            return null;
-                        } else {
-                            return NbtIo.read(inputStream);
-                        }
-                    }
-                } catch (Throwable t) {
-                    SneakyThrow.sneaky(t);
-                    return null; // Unreachable anyway
+            try (RegionFile regionFile = ((IRegionBasedStorage) this.storage).invokeGetRegionFile(pos1)) {
+                if (regionFile == null) {
+                    LOGGER.warn("Region file not found for chunk %s".formatted(pos1));
+                    return;
                 }
-            }, GlobalExecutors.prioritizedScheduler.executor(16)).handle((compound, throwable) -> {
-                if (throwable != null) future.completeExceptionally(throwable);
-                else future.complete(compound);
-                return null;
-            });
+
+                final DataInputStream chunkInputStream = regionFile.getChunkInputStream(pos1);
+                if (chunkInputStream == null) {
+                    future.complete(null);
+                    return;
+                }
+                CompletableFuture.supplyAsync(() -> {
+                    try {
+                        try (DataInputStream inputStream = chunkInputStream) {
+                            if (scanner != null) {
+                                NbtIo.scan(inputStream, scanner);
+                                return null;
+                            } else {
+                                return NbtIo.read(inputStream);
+                            }
+                        }
+                    } catch (Throwable t) {
+                        SneakyThrow.sneaky(t);
+                        return null; // Unreachable anyway
+                    }
+                }, GlobalExecutors.prioritizedScheduler.executor(16)).handle((compound, throwable) -> {
+                    if (throwable != null) future.completeExceptionally(throwable);
+                    else future.complete(compound);
+                    return null;
+                });
+            }
         } catch (Throwable t) {
             future.completeExceptionally(t);
         }

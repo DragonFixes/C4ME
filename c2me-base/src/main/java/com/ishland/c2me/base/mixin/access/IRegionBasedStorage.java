@@ -10,8 +10,6 @@ import java.io.IOException;
 
 @Mixin(RegionBasedStorage.class)
 public interface IRegionBasedStorage {
-
     @Invoker
     RegionFile invokeGetRegionFile(ChunkPos pos) throws IOException;
-
 }
