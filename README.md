@@ -2,7 +2,7 @@
 <div align="left">
 <h1>C4ME</h1>
 
-[![Discord](https://img.shields.io/discord/756715786747248641?logo=discord&logoColor=white)](https://dsc.gg/streamline)
+[![Discord](https://img.shields.io/discord/815020965108645948?logo=discord&logoColor=white)](https://dsc.gg/streamline)
 [![GitHub release](https://img.shields.io/github/v/release/DragonFixes/C4ME?include_prereleases)](https://github.com/DragonFixes/C4ME/releases)
 [![GitHub all releases](https://img.shields.io/github/downloads/DragonFixes/C4ME/total)](https://github.om/DragonFixes/C4ME/releases)
 [![GitHub issues](https://img.shields.io/github/issues/DragonFixes/C4ME)](https://github.com/DragonFixes/C4ME/issues)
@@ -44,14 +44,15 @@ So backup your worlds and practice good game modding skills.
 
 
 ## Downloads
-You can find semi-stable releases here: https://github.com/DragonFixes/C4ME/releases
+You can find semi-stable releases here: [**here**](https://github.com/DragonFixes/C4ME/releases) </br>
+Latest build: [**here**](https://github.com/DragonFixes/C4ME/releases/latest)
 
 ## Support
 Issue Tracker: [link](https://github.com/DragonFixes/C4ME/issues)  
 Discord Server: [link](https://dsc.gg/streamline)
 
 ## Building and setting up
-JDK 17+ is required to build and use C2ME  
+JDK 17+ is required to build and use C4ME  
 Run the following commands in the root directory:
 
 ```shell
